@@ -125,13 +125,11 @@ class Aparat_Crawler_Admin {
 	 * 
 	 * @since 	1.0.0
 	 */
-	public function oscimp_admin_actions() {
+	public function admin_page() {
     	add_options_page("آپارات", "آپارات", 1, "aparat", array($this, 'crawler'));
 	}
 
 	public function crawler( $pagingForward = '' ) {
-		$this->crawl_by_cat(48066, 'پیش نمایش - Trailer');
-		die();
 		$url = 'http://www.aparat.com/etc/api/profilehome/username/TorlanGame/';
 		echo '<br/>';
 
@@ -147,7 +145,9 @@ class Aparat_Crawler_Admin {
 			foreach ( $data->profilehome as $cat ) {
 				echo 'بررسی وجود دسته <b>"' . $cat->cat_name . '"</b><br/>';
 				$this->check_term( $cat->cat_name );
-				//$this->crawl_by_cat( $cat->cat_id, $cat->cat_name );
+				$this->videos = array();
+				$this->crawl_by_cat( $cat->cat_id, $cat->cat_name );
+				$this->videos = array();
 			}
 
 			return $this->crawler( $data->ui->pagingForward );
