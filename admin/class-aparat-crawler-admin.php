@@ -247,11 +247,13 @@ class Aparat_Crawler_Admin {
 				'post_status' 	=> 'publish',
 				'post_author'   => get_current_user_id(),
 				'post_content' 	=> '<style>.h_iframe-aparat_embed_frame{position:relative;} .h_iframe-aparat_embed_frame .ratio {display:block;width:100%;height:auto;} .h_iframe-aparat_embed_frame iframe {position:absolute;top:0;left:0;width:100%; height:100%;}</style><div class="h_iframe-aparat_embed_frame"> <span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/' . $video['uid'] . '/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" ></iframe></div>',
+				'meta_input'    => array(
+					'aparat_url'=> 'http://www.aparat.com/v/' . $video['uid'],
+					'wp_featherlight_disable' => 'yes',
+				),
 			);
 
 			$post_id = wp_insert_post( $args );
-			add_post_meta( $post_id, 'aparat_url', 'http://www.aparat.com/v/' . $video['uid'] );
-			add_post_meta( $post_id, 'wp_featherlight_disable', 'yes' );
 			$this->set_featured_image( $video['big_poster'], $post_id );
 			wp_set_object_terms( $post_id, $cat, 'movies_category' );
 		}
