@@ -126,7 +126,7 @@ class Aparat_Crawler_Admin {
 	 * @since 	1.0.0
 	 */
 	public function admin_page() {
-    	add_options_page("آپارات", "آپارات", 1, "aparat", array($this, 'crawler'));
+    	add_options_page('آپارات', 'آپارات', 'manage_options', 'aparat', array($this, 'crawler'));
 	}
 
 	public function crawler( $pagingForward = '' ) {
