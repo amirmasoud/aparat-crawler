@@ -212,8 +212,4 @@ class Aparat_Crawler {
 		return $this->version;
 	}
 
-	public function oscimp_admin_actions() {
-    	add_options_page("OSCommerce Product Display", "OSCommerce Product Display", 1, "OSCommerce Product Display", "oscimp_admin");
-	}
-
 }

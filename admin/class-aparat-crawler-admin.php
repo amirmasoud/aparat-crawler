@@ -93,7 +93,7 @@ class Aparat_Crawler_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->aparat_crawler, plugin_dir_url( __FILE__ ) . 'css/aparat-crawler-admin.css', array(), $this->version, 'all' );
+		//wp_enqueue_style( $this->aparat_crawler, plugin_dir_url( __FILE__ ) . 'css/aparat-crawler-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -116,7 +116,7 @@ class Aparat_Crawler_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->aparat_crawler, plugin_dir_url( __FILE__ ) . 'js/aparat_crawler-admin.js', array( 'jquery' ), $this->version, false );
+		//wp_enqueue_script( $this->aparat_crawler, plugin_dir_url( __FILE__ ) . 'js/aparat_crawler-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
